@@ -34,7 +34,7 @@ def coefficients_sgd(train, y, l_rate, n_epoch):
 			coef[0] = coef[0] + l_rate * error * yhat * (1.0 - yhat)
 			for i in range(len(row)-1):
 				coef[i + 1] = coef[i + 1] + l_rate * error * yhat * (1.0 - yhat) * row[i]
-		print('>epoch=%d, lrate=%.3f, error=%.3f' % (epoch, l_rate, sum_error))
+		# print('>epoch=%d, lrate=%.3f, error=%.3f' % (epoch, l_rate, sum_error))
 	return coef
 
 
@@ -68,4 +68,4 @@ def log_reg(X, y, learning_rate, n_iter):
 
 
 c = coefficients_sgd(X, y, 0.001, 1000)
-print(c)
+# print(c)
