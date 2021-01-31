@@ -9,34 +9,6 @@ y = dataset.iloc[:, -1].values
 
 
 
-# def sigmoid(r, w):
-#     y_pred = 0
-
-#     for i in range(len(r)):
-
-#         y_pred += w[i]*r[i]
-
-#     return 1 / (1 + np.exp(-y_pred))    
-
-
-
-
-# def log_reg(X, y, learning_rate, n_iter):
-
-#     weights = np.zeros(X.shape[0])
-
-#     for _ in range(n_iter):
-        
-#         sq_error = 0
-#         for r in X:
-#             z = sigmoid(r, weights)
-#             error = z - y
-#             sq_error += error ** 2
-
-            
-
-#             for i in range(len(r) - 1):
-#                 weights[i] -= learning_rate * error * r[i]
 
  
 
