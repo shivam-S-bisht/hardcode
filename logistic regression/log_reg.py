@@ -8,12 +8,6 @@ y = dataset.iloc[:, -1].values
 
 
 
- 
-
- 
-# weights = log_reg(X, y, learning_rate = 0.01, n_iter = 1000)
-
-# print(weights)
 
 
 def predict(row, coefficients):
@@ -34,11 +28,16 @@ def coefficients_sgd(train, y, l_rate, n_epoch):
 			coef[0] = coef[0] + l_rate * error * yhat * (1.0 - yhat)
 			for i in range(len(row)-1):
 				coef[i + 1] = coef[i + 1] + l_rate * error * yhat * (1.0 - yhat) * row[i]
-		# print('>epoch=%d, lrate=%.3f, error=%.3f' % (epoch, l_rate, sum_error))
+		print('>epoch=%d, lrate=%.3f, error=%.3f' % (epoch, l_rate, sum_error))
 	return coef
 
 
-# #sigmoid
+
+c = coefficients_sgd(X, y, 0.001, 1000)
+print(c)
+
+
+
 # def sigmoid(r, w):
 #     y_pred = 0
 
@@ -46,9 +45,11 @@ def coefficients_sgd(train, y, l_rate, n_epoch):
 
 #         y_pred += w[i]*r[i]
 
-#     return 1 / (1 + np.exp(-y_pred))   
+#     return 1 / (1 + np.exp(-y_pred))    
 
-# # log reg
+
+
+
 # def log_reg(X, y, learning_rate, n_iter):
 
 #     weights = np.zeros(X.shape[0])
@@ -66,6 +67,9 @@ def coefficients_sgd(train, y, l_rate, n_epoch):
 #             for i in range(len(r) - 1):
 #                 weights[i] -= learning_rate * error * r[i]
 
+ 
 
-c = coefficients_sgd(X, y, 0.001, 1000)
-# print(c)
+ 
+# weights = log_reg(X, y, learning_rate = 0.01, n_iter = 1000)
+
+# print(weights)
